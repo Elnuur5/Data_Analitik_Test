@@ -1,0 +1,22 @@
+def prime_factors(n):
+    factors = []
+    d = 2
+
+    while d * d <= n:
+        while n % d == 0:
+            factors.append(d)
+            n //= d
+        d += 1
+
+    if n > 1:
+        factors.append(n)
+
+    return factors
+
+
+n = 56
+print(prime_factors(n))
+
+
+Время: O(коень n), так как проверяются делители только до квадратного корня числа.
+Память: O(k), где k — количество простых множителей числа.
